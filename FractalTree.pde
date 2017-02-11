@@ -19,8 +19,6 @@ public void draw()
 		branchAngle += 0.1;
 	}
 
-	System.out.println(isChanging);
-
 	beginY = mouseY;  
 	length = (height - mouseY) / 3;
 
@@ -32,7 +30,6 @@ public void draw()
 	drawBranches(beginX, beginY, length, 3*Math.PI/2);
 	drawBranches(beginX, beginY, length, 2.5*Math.PI/2);
 	drawBranches(beginX, beginY, length, 2*Math.PI/2);
-	//drawBranches(beginX, beginY, 50, 1.5*Math.PI/2);
 } 
 
 public void keyPressed () {
