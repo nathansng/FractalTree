@@ -6,6 +6,8 @@ private int beginX = 320;
 public int beginY = 300;
 private int length = 50;
 
+boolean isChanging = false;
+
 public void setup() 
 {   
 	size(640,480);    
@@ -13,12 +15,11 @@ public void setup()
 
 public void draw() 
 {   
-	if (keyPressed == true && key == 'a') {
+	if (isChanging == true) {
 		branchAngle += 0.1;
 	}
-	if (keyPressed == true && key == 'd') {
-		branchAngle -= 0.1;
-	}
+
+	System.out.println(isChanging);
 
 	beginY = mouseY;  
 	length = (height - mouseY) / 3;
@@ -33,6 +34,18 @@ public void draw()
 	drawBranches(beginX, beginY, length, 2*Math.PI/2);
 	//drawBranches(beginX, beginY, 50, 1.5*Math.PI/2);
 } 
+
+public void keyPressed () {
+	if (key == 32) {
+		isChanging = true;
+	} 
+}
+
+public void keyReleased () {
+	if (key == 32) {
+		isChanging = false;
+	}
+}
 
 
 public void drawBranches(int x,int y, double branchLength, double angle) 
