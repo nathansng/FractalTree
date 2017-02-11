@@ -13,6 +13,13 @@ public void setup()
 
 public void draw() 
 {   
+	if (keyPressed == true && key == 'a') {
+		branchAngle += 0.1;
+	}
+	if (keyPressed == true && key == 'd') {
+		branchAngle -= 0.1;
+	}
+
 	beginY = mouseY;  
 	length = (height - mouseY) / 3;
 
@@ -27,14 +34,6 @@ public void draw()
 	//drawBranches(beginX, beginY, 50, 1.5*Math.PI/2);
 } 
 
-public void keyPressed () {
-	if (key == 38) {
-		branchAngle += 0.1;
-	}
-	if (key == 40) {
-		branchAngle -= 0.1;
-	}
-}
 
 public void drawBranches(int x,int y, double branchLength, double angle) 
 {   
